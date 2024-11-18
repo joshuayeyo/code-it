@@ -1,0 +1,45 @@
+/* 폰트 추가 */
+@font-face {
+  font-family: 'NanumSquare';
+  font-weight: 400;
+  font-style: normal;
+  src: url('/fonts/NanumSquareR.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'NanumSquare';
+  font-weight: 700;
+  font-style: normal;
+  src: url('/fonts/NanumSquareB.woff') format('woff');
+}
+
+/* 전체 스타일 조정 */
+body {
+  margin: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color:  #F9FAFB;
+  font-family: 'NaNumSqure';
+  overflow-x: hidden;
+}
+
+.childrenWrapper {
+  width: 100%; /* 자식 요소의 너비 */
+}
+
+/* 모바일 & 태블릿 사이즈 */
+@media (max-width: 1199px){
+	.childrenWrapper {
+    width: 100%;
+  }
+}
+
+/* 데스크톱 사이즈 */
+@media (min-width: 1200px) {
+  .childrenWrapper {
+    width: 60%;
+    padding: 0 20vw;
+  }
+}

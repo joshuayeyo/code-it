@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Checklist from "@/components/Checklist";
 import styled from "@emotion/styled";
+import { TodoProps } from "@/types";
 
 const TodoListSection = ({ todos, setTodos }: { todos: TodoProps[]; setTodos: React.Dispatch<React.SetStateAction<TodoProps[]>> }) => {
         const updateTodoCompletion = (id: number, completed: boolean) => {

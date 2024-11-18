@@ -1,3 +1,4 @@
+import { TodoProps } from "@/types";
 import styled from "@emotion/styled";
 import axios from "axios";
 import Image from "next/image";

@@ -151,8 +151,6 @@ const MemoContainer = styled.div`
         z-index: 0;
     }
 
-
-
     @media (max-width: 1199px) {
         width: 100%;
     }
@@ -164,10 +162,10 @@ const ButtonContainer = styled.div`
     justify-content: center;
     align-items: center;
     gap: 16px;
-    width: 100%;
-    margin-right: 10%;
+    width: 90%;
+    margin-right: 10px;
 
-    @media (min-width: 768px) {
+    @media (min-width: 1199px) {
         justify-content: flex-end;
         margin-right: 20px;
     }

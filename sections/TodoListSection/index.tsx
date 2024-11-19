@@ -101,4 +101,13 @@ const EmptyContainer = styled.div`
     font-size: 16px;
     color: #94A3B8;
     text-align: center;
+
+    img { 
+        max-height: 80%;
+    }
+
+    span {
+        display: block; // block으로 설정하여 span이 각 줄을 차지
+        margin-top: 0.5rem;
+    }
 `

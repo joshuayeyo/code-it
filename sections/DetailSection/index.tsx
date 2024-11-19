@@ -56,7 +56,7 @@ const TodoDetailSection = ({todo, itemName}: Props) => {
             };
 
             await axios.patch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/joshuayeyo/items/${todo.id}`, updatedData);
-            router.push(`/`);
+            router.push(`/`);   // 루트 페이지로 이동
         } catch (error) {
             console.error("아이템 제출 오류:", error);
         }
@@ -79,9 +79,9 @@ const TodoDetailSection = ({todo, itemName}: Props) => {
                 <ImageUploader onUpload={handleFileUpload} preview={preview} />
                 <MemoContainer>
                     <Title>Memo</Title>
-                    <TextAreaContainer> {/* TextArea를 정렬할 컨테이너 */}
+                    <TextAreaContainer>     {/*TextArea를 정렬할 컨테이너*/} 
                         <TextArea 
-                        value={userMemo != null ? userMemo : ""} 
+                        value={userMemo != null ? userMemo : ""}        // null일 경우 빈 스트링 출력으로 처리
                         onChange={(e) => setUserMemo(e.target.value)} 
                         placeholder="메모를 작성해 주세요."
                         />
@@ -127,7 +127,6 @@ const MemoContainer = styled.div`
     height: 311px;
     background-color: #FEFCE8;
     border-radius: 24px;
-    padding: 16px;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
     border: none;
     position: relative;

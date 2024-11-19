@@ -14,6 +14,7 @@ const ItemDetailPage = () => {
     const[isLoading, setIsLoading] = useState(true);
     const [itemName, setItemName] = useState<string>("");
 
+    // Todo 상세 데이터 가져오는 훅
     useEffect(() => {
         if (!id) return;
         const fetchItemDetail = async () => {

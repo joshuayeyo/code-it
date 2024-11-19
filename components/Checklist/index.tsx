@@ -92,7 +92,13 @@ const TodoButton = styled.button<{ isCompleted: boolean}>`
     background-color: ${({ isCompleted }) => (isCompleted ? '#7C3AED' : '#FEFCE8')};
     border-color: ${({ isCompleted }) => (isCompleted ? 'none' : '#000')};
     cursor: pointer;
-    transition: background-color 0.3s ease, border-color 0.3s ease;
+    outline: none;
+    transition: background-color 0.3s ease, border-color 0.3s ease; // 버튼 애니메이션
+
+    // 체크 표시 중앙 정렬
+    display: flex;
+    align-items: center;
+    justify-content: center;
 `
 
 const TodoText = styled.span<{ isCompleted: boolean }>`

@@ -12,6 +12,10 @@ const SearchBarSection = ({ addTodo }: {addTodo: (newTodo: TodoProps) => void })
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
+        if (!userInput) {
+            alert("Todo가 입력되지 않았습니다!")
+            return;
+        }
         try {
             const response = await axios.post(`${BASEURL}/api/joshuayeyo/items`, { name: userInput });
             addTodo(response.data)

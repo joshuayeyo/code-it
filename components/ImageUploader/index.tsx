@@ -5,11 +5,13 @@ import { ChangeEvent, useEffect, useRef, useState } from "react";
 const ImageUploader = ({onUpload, preview}: {onUpload: (file: File) => void, preview: string | null}) => {
     const [localPreview, setLocalPreview] = useState<string | null>(preview)
     const fileInputRef = useRef<HTMLInputElement | null>(null);
-
+    
+    // 이미지 업로드 창 열기
     const handleButtonClick = () => {
         fileInputRef.current?.click();
-    };
+    }
 
+    // 파일 업로드 감지 함수
     const handleFileChange = (event: ChangeEvent<HTMLInputElement>) => {
         const file = event.target.files?.[0];
         if (!file) return;
@@ -69,7 +71,6 @@ const Wrapper = styled.div`
     border: 2px dashed #CBD5E1;    
     border-radius: 24px;
     position: relative;
-    padding: 16px;
 
     @media (max-width: 1199px) {
         width: 100%;

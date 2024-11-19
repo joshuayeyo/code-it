@@ -85,10 +85,10 @@ const PreviewImage = styled.img`
 
 const UploadButton = styled.button<{hasPreview?: boolean}>`
     background-color: ${({ hasPreview }) => (hasPreview ? "#E2E8F0" : "#0F172A80")}; /* localPreview에 따라 배경색 변경 */
-    width: 64px;
-    height: 64px;
+    width: 64px !important;
+    height: 64px !important;
     border-radius: 50%;
-    border: 2px, ${({ hasPreview }) => (hasPreview ? "#0F172A" : "none")}; /* localPreview에 따라 배경색 변경 */
+    border: 2px solid ${({ hasPreview }) => (hasPreview ? "#0F172A" : "none")}; /* localPreview에 따라 배경색 변경 */
     font-size: 48px;
     color: #64748B;
     position: absolute;
@@ -99,6 +99,7 @@ const UploadButton = styled.button<{hasPreview?: boolean}>`
     display: flex;
     align-items: center;
     justify-content: center;
+    box-sizing: border-box;
 `
 
 const HiddenInput = styled.input`

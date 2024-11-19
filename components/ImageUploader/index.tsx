@@ -41,7 +41,11 @@ const ImageUploader = ({onUpload, preview}: {onUpload: (file: File) => void, pre
             ) : (
                 <Image src="/icons/img.png" alt="이미지" width={64} height={64} />
             )}
-            <UploadButton onClick={handleButtonClick}> + </UploadButton>
+            { localPreview ? (
+                <UploadButton onClick={handleButtonClick}> <Image src="/icons/edit.png" alt={"Edit Button"} width={24} height={24} /> </UploadButton>
+            ) : (
+                <UploadButton onClick={handleButtonClick} hasPreview={!localPreview}> + </UploadButton>
+            )}
             <HiddenInput
                 type="file"
                 accept="image/*"
@@ -79,18 +83,22 @@ const PreviewImage = styled.img`
     border-radius: 24px;
 `;
 
-const UploadButton = styled.button`
-    background-color: #E2E8F0;
+const UploadButton = styled.button<{hasPreview?: boolean}>`
+    background-color: ${({ hasPreview }) => (hasPreview ? "#E2E8F0" : "#0F172A80")}; /* localPreview에 따라 배경색 변경 */
     width: 64px;
     height: 64px;
     border-radius: 50%;
-    border: none;
+    border: 2px, ${({ hasPreview }) => (hasPreview ? "#0F172A" : "none")}; /* localPreview에 따라 배경색 변경 */
     font-size: 48px;
     color: #64748B;
     position: absolute;
     bottom: 10px;
     right: 10px;
     cursor: pointer;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
 `
 
 const HiddenInput = styled.input`

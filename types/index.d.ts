@@ -9,8 +9,9 @@ export interface TodoProps{
 export interface ButtonProps {
     type: "submit" | "button";
     onClick: (e: React.FormEvent) => void;
-    userMemo?: string | null;  // EditButton에서만 사용되는 필드
+    isCompleted?: boolean;      // statusToggle을 위한 버튼에 사용되는 Prop
+    userMemo?: string | null;  // EditButton에서만 사용되는 Prop
     userInput?: string;
-    variant: "delete" | "edit" | "post"; // 버튼 타입을 구분하기 위한 필드
-    isUploaded?: boolean; // 이미지 업로드 상태를 체크하기 위한 필드
+    variant: "delete" | "edit" | "post" | "statusToggle"; // 버튼 타입을 구분하기 위한 Prop
+    isUploaded?: boolean; // 이미지 업로드 상태를 체크하기 위한 Prop
 }

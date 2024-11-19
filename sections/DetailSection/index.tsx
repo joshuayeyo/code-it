@@ -18,6 +18,7 @@ const TodoDetailSection = ({todo, itemName}: Props) => {
     const [preview, setPreview] = useState<string | null>(null); // 프리뷰 URL 상태
     const [isUploaded, setIsUploaded] = useState<boolean>(false)
     
+    // Preview, 업로드 상태 관리 훅
     useEffect(() => {
         if (todo.imageUrl) {
             setPreview(todo.imageUrl);      // 서버에서 이미지를 받아왔다면 미리보기로 해당 이미지 설정
@@ -25,7 +26,7 @@ const TodoDetailSection = ({todo, itemName}: Props) => {
         }
     }, [todo.imageUrl]);
 
-
+    // 파일 업로드 함수
     const handleFileUpload = async (file: File) => {
         try {
             const formData = new FormData();
@@ -42,6 +43,7 @@ const TodoDetailSection = ({todo, itemName}: Props) => {
         }
     };
 
+    // 게시글 추가 함수
     const handleSubmit = async () => {
         try {
             if (!isUploaded && uploadedUrl != todo.imageUrl) {
@@ -62,6 +64,7 @@ const TodoDetailSection = ({todo, itemName}: Props) => {
         }
     };
 
+    // 게시글 삭제 함수
     const handleDelete = async () => {
         try {
             await axios.delete(`${process.env.NEXT_PUBLIC_BASE_URL}/api/joshuayeyo/items/${todo.id}`);
